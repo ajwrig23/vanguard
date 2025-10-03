@@ -1,7 +1,8 @@
-/* CSS BY YOUR NAME */
+/* CSS BY AARON WRIGHT */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORT "INTER" FROM GOOGLE FONTS"*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -85,8 +86,8 @@ table {
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
+h1::before {
+    content: "images/vanguard-logo.svg";
 
     left:-.5rem;
     width: 3.75rem;
