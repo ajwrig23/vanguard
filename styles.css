@@ -66,30 +66,215 @@ table {
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+body {
+    min-width: 400px;
+    font-family: var(--font);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--black);
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    width: 100%;
+}
+
+h1 {
+    display: inline;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--blue);
+    padding-left: 20px;
+    margin: 0 auto;
+    text-align: end;
+}
+
+section h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 40px 0 30px;
+}
+
+nav {
+    text-align: center;
+    justify-items: end;
+    padding-right: 0.5rem;
+    width: 40%;
+}
+
+nav ul {
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    
+    max-height: 0;
+    background-color: var(--black);
+}
+
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+}
+
+nav li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--blue);
+    transition: background-color .5s ease-in;
+}
+
+nav li a:hover, nav input:hover {
+    background-color: var(--blue);
+    color: var(--black);
+    font-weight: bold;
+}
+
+nav label {
+    cursor: pointer;
+    display: block;
+    padding: 1.5rem;
+    user-select: none;
+    }
+
+
+
+nav label span {
+    background-color: var(--white);
+    display: inline-block;
+    height: .25rem;
+    position: relative;
+    width: 2rem;
+}
+
+nav label span:before, label span:after {
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+nav label span:before {
+    top: .75rem;
+}
+nav label span:after {
+    top: -.75rem;
+}
+
+input {
+    display: none;
+
+}
+
+input:checked ~ ul {
+    max-height: 200px;
+}
+
+
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    line-height: 1.5em;
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+#innovInvest {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
     place-items: center;
     text-align: center;
+    color: var(--white);
     padding: 1rem;
     overflow: hidden;
+    mask: linear-gradient();
+}
+
+#innovInvest h2 {
+    margin: 0 0 30px;
+}
+
+#innovInvest .container {
+    padding: 20px 10px 0;
+    backdrop-filter: blur(10px);
+}
+
+#innovInvest a {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--blue);
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 20px 15px;
+    margin: 20px auto 0;
+    max-width: 250px;
+}
+
+.offerComp {
+    color: var(--white);
+    background-color: var(--blue);
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.offerComp h3 {
+    font-size: 1.4rem;
+    font-weight:bold;
+    padding: 20px;
+}
+
+#results {
+    background-color: var(--blue);
+    color: var(--white);
+}
+#results table {
+    width: 100%;
+    margin-top: 40px;
+}
+
+#results th {
+    font-weight: bold;
+    border: 1px solid var(--charcoal);
+    background-color: var(--black);
+    padding: 15px;
+    text-align: center;
+}
+
+#results td {
+    border: 1px solid var(--charcoal);
+    background-color: var(--black);
+    padding: 15px;
+    text-align: center;
+}
+
+#results .even td{
+    background-color: var(--charcoal);
+}
+
+.results-container {
+    padding: 10px 15px 20px;
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 h1::before {
-    content: "images/vanguard-logo.svg";
-
+    content: "";
+    float: left;
     left:-.5rem;
+    margin-right: 20px;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
@@ -114,7 +299,7 @@ h1::before {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height 0.2s ease-in;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -143,6 +328,8 @@ h1::before {
 
 
 /* MEDIA QUERIES (MEDIUM) */ 
+@media screen and (min-width: 800px) {
+    
 
     #results {
         grid-template-columns: 1fr 1fr;
@@ -157,6 +344,6 @@ h1::before {
     .bar-chart {
         width: 50%;
     }
-
+}
 
 /* MEDIA QUERIES (LARGE) */
