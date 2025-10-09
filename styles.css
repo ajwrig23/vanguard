@@ -83,12 +83,13 @@ header {
 }
 
 h1 {
-    /* display: inline; */
+    float: left;
     font-size: 2.5em;
     font-weight: bold;
     color: var(--blue);
-    /* padding-left: 10px; */
-    margin: 0 auto;
+    padding-left: 10px;
+    margin: 0;
+    width: auto;
     /* text-align: end; */
 }
 
@@ -100,10 +101,13 @@ section h2 {
 }
 
 nav {
+    position: relative;
+    /* right: 10px; */
+    /* top: 30px; */
     text-align: center;
     justify-items: end;
-    padding-right: 0.5rem;
-    width: 40%;
+    padding-right: 5px;
+    width: auto;
 }
 
 nav ul {
@@ -485,9 +489,12 @@ h1::before {
     }
 
     nav {
+        position: absolute;
+        right:20px;
+        top: 30px;
         float: right;
         display: flex;
-        width: 65%;
+        width: auto;
         justify-content: right;
     }
 
